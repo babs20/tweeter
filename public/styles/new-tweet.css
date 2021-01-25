@@ -49,3 +49,8 @@
   color: #545149;
   font-family: 'Bungee', sans-serif;
 }
+
+.counter.negative-num {
+  color: red;
+  font-family: 'Bungee', sans-serif;
+}
