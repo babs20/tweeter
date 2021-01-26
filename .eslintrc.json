@@ -6,6 +6,9 @@
         "node": true,
         "jquery": true
     },
+    "plugins": [
+        "momentjs"
+    ],
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 12
