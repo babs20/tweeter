@@ -1,6 +1,15 @@
 'use strict';
 
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-console */
+
 $(document).ready(function () {
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (tweetData) {
     let $tweet = `
     <article>
@@ -11,7 +20,7 @@ $(document).ready(function () {
       </div>
       <span class="handle">${tweetData.user.handle}</span>
     </header>
-    <p>${tweetData.content.text}</p>
+    <p>${escape(tweetData.content.text)}</p>
     <footer>
       <span>${moment(tweetData.created_at).fromNow()}</span>
       <div>
@@ -35,13 +44,11 @@ $(document).ready(function () {
   };
 
   const loadTweets = function () {
-    $.ajax('/tweets')
-      .then((data) => {
+    $.ajax('/tweets', {
+      success: (data) => {
         renderTweets(data);
-      })
-      .catch((error => {
-        console.log(error.statusText);
-      }));
+      }
+    });
   };
 
   loadTweets();
@@ -51,15 +58,39 @@ $(document).ready(function () {
     $form.on('submit', function (event) {
       event.preventDefault();
 
-      const formText = $(this).serialize();
+      const errorMsg = $(this).parent().children('label');
+      const tweetLength = $(this)
+        .children('#tweet-text')
+        .val()
+        .length;
 
-      $.ajax('/tweets', { method: 'POST', data: formText })
-        .then((data) => {
-          console.log(data);
-        });
+      switch (true) {
+        case tweetLength === 0:
+          console.log('yes');
+          errorMsg.text('Can not post an empty tweet.');
+          errorMsg
+            .addClass('error-shown')
+            .slideDown()
+            .removeClass('error-hidden');
+          return;
+        case tweetLength > 140:
+          errorMsg.text('Your post is too long. Please shorten it.');
+          errorMsg
+            .addClass('error-shown')
+            .slideDown()
+            .removeClass('error-hidden');
+          return;
+        default:
+      }
+
+      errorMsg.slideUp();
+
+      const formText = $(this).serialize();
+      $.ajax('/tweets', { method: 'POST', data: formText, success: () => loadTweets() });
+
+      $(this).children('#tweet-text').val('');
     });
   });
 
   // renderTweets(data);
-
 });

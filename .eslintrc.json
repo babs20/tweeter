@@ -9,7 +9,7 @@
     "plugins": [
         "momentjs"
     ],
-    "extends": "eslint:recommended",
+    "extends": "airbnb-base/legacy",
     "parserOptions": {
         "ecmaVersion": 12
     },
