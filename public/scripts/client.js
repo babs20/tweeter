@@ -36,17 +36,17 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (arrayOfTweets) {
-    const reverseTweetsArray = arrayOfTweets.reverse();
-    for (const tweetData of reverseTweetsArray) {
+    for (const tweetData of arrayOfTweets) {
       const $tweet = createTweetElement(tweetData);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
 
-  const loadTweets = function () {
+  const loadTweets = function (isNewTweetSubmission) {
     $.ajax('/tweets', {
       success: (data) => {
-        renderTweets(data);
+        const dataToAdd = isNewTweetSubmission ? data.slice(data.length - 1) : data;
+        renderTweets(dataToAdd);
       }
     });
   };
@@ -64,7 +64,7 @@ $(document).ready(function () {
         .val()
         .length;
 
-      switch (true) {
+      switch (true) { // MAKE OWN FUNCTION
         case tweetLength === 0:
           console.log('yes');
           errorMsg.text('Can not post an empty tweet.');
@@ -86,11 +86,9 @@ $(document).ready(function () {
       errorMsg.slideUp();
 
       const formText = $(this).serialize();
-      $.ajax('/tweets', { method: 'POST', data: formText, success: () => loadTweets() });
+      $.ajax('/tweets', { method: 'POST', data: formText, success: () => loadTweets(true) });
 
       $(this).children('#tweet-text').val('');
     });
   });
-
-  // renderTweets(data);
 });
