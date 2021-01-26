@@ -11,12 +11,12 @@
 }
 
 .new-tweet label {
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .new-tweet textarea {
   border: none;
-  border-bottom: 0.25em solid #545149;
+  border-bottom: 0.2em solid #545149;
   background-color: transparent;
   resize: none;
   margin-top: 0.5em;
