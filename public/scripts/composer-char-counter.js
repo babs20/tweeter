@@ -8,6 +8,4 @@ $(document).ready(function () {
     counter.val(140 - lengthOfTweet);
   });
 
-
-
 });
