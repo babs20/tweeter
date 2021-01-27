@@ -1,0 +1,33 @@
+header {
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  background-color: #da9d2c;
+  background-image: url("../images/asfalt-light.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-pic {
+  margin-top: 0.5em;
+}
+
+header h2 {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+header span {
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  header {
+    flex-grow: 1;
+    align-self: flex-start;
+    margin: 7em 0em 0em 3em;
+    width: 50%;
+  }
+}
