@@ -1,0 +1,83 @@
+@use 'base';
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 1.75em 0 0.75em 0;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-tweet label {
+  font-weight: 700;
+}
+
+.new-tweet textarea {
+  border: none;
+  border-bottom: 0.2em solid base.$tweeter-neutral;
+  background-color: transparent;
+  resize: none;
+  margin-top: 0.5em;
+}
+
+.new-tweet textarea:focus {
+  outline: none;
+}
+
+.new-tweet h2 {
+  margin: 0.25em 0em 0.25em 0em;
+}
+
+.bottom-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.new-tweet button {
+  color: #ffffff;
+  font-family: base.$secondary-font;
+  border: none;
+  background-color: base.$tweeter-blue;
+  min-width: 0;
+}
+
+.new-tweet button:hover {
+  background-color: base.$tweeter-blue-hover;
+  cursor: pointer;
+}
+
+.new-tweet output {
+  color: base.$tweeter-neutral;
+  font-family: base.$secondary-font;
+}
+
+.counter.negative-num {
+  color: red;
+  font-family: base.$secondary-font;
+}
+
+.new-tweet .error-shown {
+  justify-self: center;
+  margin: 1.5em 0em 0em 0em;
+  padding: 0.75em;
+  border: 0.2em solid base.$tweeter-neutral;
+  background-color: rgba(218, 157, 44, 0.25);
+  text-align: center;
+  font-weight: 300;
+  color: base.$tweeter-neutral;
+}
+
+.new-tweet.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
