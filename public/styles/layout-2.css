@@ -53,6 +53,9 @@ main {
   align-self: flex-end;
   justify-self: flex-end;
   margin: 0.25em;
+  animation: 1s bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .jump-to-top img {
@@ -81,13 +84,7 @@ button.hidden {
 }
 @media (max-width: 600px) {
   .jump-to-top {
-    position: fixed;
-    bottom: 2em;
     width: 3em;
     height: 3em;
-    background-color: rgba(218, 157, 44, 0.5);
-    border: none;
-    border-radius: 3rem;
-    align-self: end;
   }
 }
