@@ -2323,7 +2323,7 @@
 		"webpRGBQuality": 75
 		},
 	"languageDefaultsJS": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*-min.js",
 		"autoOutputPathRelativePath": "/min",
 		"autoOutputPathReplace1": "",
@@ -2331,8 +2331,8 @@
 		"autoOutputPathStyle": 0,
 		"bundleFormat": 0,
 		"createSourceMap": 0,
-		"minifyOutput": 1,
-		"syntaxCheckerStyle": 3,
+		"minifyOutput": 0,
+		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 0
 		},
 	"languageDefaultsJSON": {
