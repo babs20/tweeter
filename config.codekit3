@@ -81,12 +81,12 @@
 		},
 	"/public/images/fast-forward-double-right-arrows-symbol-copy.png": {
 		"ft": 32768,
-		"iS": 1310,
+		"iS": 1340,
 		"oA": 0,
 		"oAP": "/public/images/fast-forward-double-right-arrows-symbol-copy.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
@@ -165,37 +165,48 @@
 		"oAP": "/public/index.html",
 		"oF": 0
 		},
+	"/public/scripts/client-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/public/scripts/client-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/public/scripts/client.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
+		"mi": 0,
+		"oA": 1,
 		"oAP": "/public/scripts/client-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"/public/scripts/composer-char-counter.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
+		"mi": 0,
+		"oA": 1,
 		"oAP": "/public/scripts/composer-char-counter-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"/public/scripts/composer.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
+		"mi": 0,
+		"oA": 1,
 		"oAP": "/public/scripts/composer-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"/public/scss/_base.scss": {
@@ -293,6 +304,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/public/styles/header-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/public/styles/layout-2.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/public/styles/layout-2-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -2323,7 +2344,7 @@
 		"webpRGBQuality": 75
 		},
 	"languageDefaultsJS": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*-min.js",
 		"autoOutputPathRelativePath": "/min",
 		"autoOutputPathReplace1": "",
@@ -2331,8 +2352,8 @@
 		"autoOutputPathStyle": 0,
 		"bundleFormat": 0,
 		"createSourceMap": 0,
-		"minifyOutput": 1,
-		"syntaxCheckerStyle": 3,
+		"minifyOutput": 0,
+		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 0
 		},
 	"languageDefaultsJSON": {
