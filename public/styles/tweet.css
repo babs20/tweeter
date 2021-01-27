@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 250px;
+  height: 300px;
   width: 100%;
   border: 0.2em solid #545149;
   margin: 1.5em 0em 1.5em 0em;
@@ -28,6 +28,7 @@
   align-self: center;
   flex-wrap: wrap;
   width: 95%;
+  margin-top: 0.25em;
 }
 
 .tweets header img {
@@ -51,6 +52,7 @@
 .tweets .handle {
   color: rgba(64, 86, 161, 0);
   font-weight: 300;
+  margin-right: 0.5em;
 }
 
 .tweets p {
@@ -61,16 +63,18 @@
   width: 96%;
   padding: 0.75em 0.5em 0.75em 0.5em;
   border-bottom: 0.2em solid #545149;
-  margin: 0;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.5);
-  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  margin-bottom: 0.5em;
 }
 
 .tweets footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 10%;
   width: 92%;
 }
 
@@ -108,8 +112,26 @@
   opacity: 1;
 }
 
-@media (min-width: 1024px) {
-  .tweets {
-    /* margin-top: 100px; */
+@media (max-width: 900px) {
+  .tweets article p,
+  .tweets article span,
+  .tweets article footer span {
+    font-size: 18px;
+  }
+  .tweets article p {
+    margin: 0;
+  }
+
+  .tweets article {
+    height: 300px;
+  }
+  .tweets article footer div.share-options {
+    width: 20%;
+  }
+}
+
+@media (max-width: 450px) {
+  .tweets article footer div.share-options {
+    width: 25%;
   }
 }

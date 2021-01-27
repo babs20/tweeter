@@ -24,7 +24,7 @@ $(document).ready(function () {
     <p>${escape(tweetData.content.text)}</p>
     <footer>
       <span>${moment(tweetData.created_at).fromNow()}</span>
-      <div>
+      <div class="share-options">
         <img src="images/flags.png" alt="Flag">
         <img src="images/retweet.png" alt="Retweet">
         <img src="images/like.png" alt="Like">

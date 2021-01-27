@@ -48,10 +48,12 @@ main {
   bottom: 2em;
   width: 4em;
   height: 4em;
-  background-color: red;
+  background-color: rgb(218, 157, 44, 0.5);
   border: none;
   border-radius: 4rem;
-  align-self: end;
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin: 0.25em;
 }
 
 .to-top img {
@@ -61,7 +63,7 @@ main {
 
 .to-top:hover {
   cursor: pointer;
-  background-color: #ba0000;
+  background-color: rgb(218, 157, 44, 0.75);
 }
 
 button.hidden {
@@ -76,5 +78,18 @@ button.hidden {
   main {
     margin-top: 100px;
     flex-grow: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .to-top {
+    position: fixed;
+    bottom: 2em;
+    width: 3em;
+    height: 3em;
+    background-color: rgb(218, 157, 44, 0.5);
+    border: none;
+    border-radius: 3rem;
+    align-self: end;
   }
 }

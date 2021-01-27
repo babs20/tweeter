@@ -29,6 +29,10 @@ nav div {
   justify-content: center;
 }
 
+nav div .tweet-button {
+  text-align: center;
+}
+
 @keyframes bounce {
   0% {
     transform: translate(0, 0);
@@ -52,4 +56,10 @@ nav div img {
 nav div.tweet-button:hover {
   text-shadow: 0px -1px 20px rgba(256, 256, 256, 0.75);
   cursor: pointer;
+}
+
+@media (max-width: 470px) {
+  nav div img {
+    display: none;
+  }
 }

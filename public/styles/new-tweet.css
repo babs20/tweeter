@@ -68,6 +68,7 @@
   border: 0.2em solid #545149;
   background-color: rgb(218, 157, 44, 0.25);
   text-align: center;
+  font-weight: 300;
 }
 
 .new-tweet.hidden {
