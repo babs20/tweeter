@@ -4,6 +4,8 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
+// i should just look up the rules for these and add them
+// to the eslintrc but not too important right now.
 
 // ESCAPE FUNCTION
 $(document).ready(function () {
@@ -38,7 +40,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  const renderTweets = function (arrayOfTweets) {
+  const $renderTweets = function (arrayOfTweets) {
     for (const tweetData of arrayOfTweets) {
       const $tweet = createTweetElement(tweetData);
       $('#tweets-container').prepend($tweet);
@@ -49,12 +51,12 @@ $(document).ready(function () {
     $.ajax('/tweets')
       .done((data) => {
         const dataToAdd = isNewTweetSubmission ? data.slice(data.length - 1) : data;
-        renderTweets(dataToAdd);
+        $renderTweets(dataToAdd);
       })
       .fail(() => console.log('Tweets are not loading right now. Try again later!'));
   };
 
-  $loadTweets(); // initialize page load
+  $loadTweets(); // initialize on page load
 
   const $toggleTweetBoxButton = $('.tweet-button');
   $toggleTweetBoxButton.on('click', function () {
@@ -70,22 +72,22 @@ $(document).ready(function () {
   });
 
   const handleErrorOnSubmit = function (formElement) {
-    const errorMsgElement = $(formElement).parent().children('.error-box');
-    const tweetLength = $(formElement).children('#tweet-text').val().length;
+    const $errorMsgElement = $(formElement).parent().children('.error-box');
+    const $tweetLength = $(formElement).children('#tweet-text').val().length;
 
     switch (true) {
-      case tweetLength === 0:
-        errorMsgElement
+      case $tweetLength === 0:
+        $errorMsgElement
           .text('Can not post an empty tweet.')
           .slideDown();
         return true;
-      case tweetLength > 140:
-        errorMsgElement
+      case $tweetLength > 140:
+        $errorMsgElement
           .text('Your post is too long. Please shorten it.')
           .slideDown();
         return true;
       default:
-        errorMsgElement.slideUp();
+        $errorMsgElement.slideUp();
         return false;
     }
   };
@@ -96,8 +98,8 @@ $(document).ready(function () {
     event.preventDefault();
     if (handleErrorOnSubmit(this)) return;
 
-    const formText = $(this).serialize();
-    $.ajax('/tweets', { method: 'POST', data: formText })
+    const $formText = $(this).serialize();
+    $.ajax('/tweets', { method: 'POST', data: $formText })
       .done(() => {
         $loadTweets(true);
       })

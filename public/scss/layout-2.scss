@@ -45,7 +45,7 @@ main {
   margin: 0em 0 1.5em 0;
 }
 
-.to-top {
+.jump-to-top {
   position: fixed;
   bottom: 2em;
   width: 4em;
@@ -58,12 +58,12 @@ main {
   margin: 0.25em;
 }
 
-.to-top img {
+.jump-to-top img {
   height: 1.5em;
   width: 1.5em;
 }
 
-.to-top:hover {
+.jump-to-top:hover {
   cursor: pointer;
   background-color: rgba(218, 157, 44, 0.75);
 }
@@ -84,7 +84,7 @@ button.hidden {
 }
 
 @media (max-width: 600px) {
-  .to-top {
+  .jump-to-top {
     position: fixed;
     bottom: 2em;
     width: 3em;

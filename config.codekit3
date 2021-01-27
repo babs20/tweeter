@@ -79,32 +79,6 @@
 		"q": 100,
 		"rq": 75
 		},
-	"/public/images/fast-forward-double-right-arrows-symbol-copy.png": {
-		"ft": 32768,
-		"iS": 1310,
-		"oA": 0,
-		"oAP": "/public/images/fast-forward-double-right-arrows-symbol-copy.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"ou": "lpckwebp-none",
-		"q": 100,
-		"rq": 75
-		},
-	"/public/images/fast-forward-double-right-arrows-symbol.png": {
-		"ft": 32768,
-		"iS": 1139,
-		"oA": 0,
-		"oAP": "/public/images/fast-forward-double-right-arrows-symbol.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"ou": "lpckwebp-none",
-		"q": 100,
-		"rq": 75
-		},
 	"/public/images/flags.png": {
 		"ft": 32768,
 		"iS": 810,
@@ -126,6 +100,19 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
+		"ou": "lpckwebp-none",
+		"q": 100,
+		"rq": 75
+		},
+	"/public/images/new-tweet-arrows.png": {
+		"ft": 32768,
+		"iS": 1310,
+		"oA": 0,
+		"oAP": "/public/images/new-tweet-arrows.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
@@ -157,6 +144,19 @@
 		"q": 100,
 		"rq": 75
 		},
+	"/public/images/scroll-up-arrows.png": {
+		"ft": 32768,
+		"iS": 1139,
+		"oA": 0,
+		"oAP": "/public/images/scroll-up-arrows.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"ou": "lpckwebp-none",
+		"q": 100,
+		"rq": 75
+		},
 	"/public/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -164,6 +164,17 @@
 		"oA": 0,
 		"oAP": "/public/index.html",
 		"oF": 0
+		},
+	"/public/scripts/client-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/public/scripts/client-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/public/scripts/client.js": {
 		"bF": 0,
@@ -176,6 +187,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/public/scripts/composer-char-counter-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/public/scripts/composer-char-counter-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/public/scripts/composer-char-counter.js": {
 		"bF": 0,
 		"ft": 64,
@@ -185,6 +207,17 @@
 		"oAP": "/public/scripts/composer-char-counter-min.js",
 		"oF": 0,
 		"sC": 3,
+		"tS": 0
+		},
+	"/public/scripts/composer-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/public/scripts/composer-min-min.js",
+		"oF": 0,
+		"sC": 0,
 		"tS": 0
 		},
 	"/public/scripts/composer.js": {
@@ -293,6 +326,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/public/styles/header-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/public/styles/layout-2.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/public/styles/layout-2-min.css",
 		"oF": 0,
 		"oS": 3
 		},
