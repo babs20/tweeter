@@ -22,3 +22,12 @@ header h2 {
 header span {
   font-weight: 700;
 }
+
+@media (min-width: 1024px) {
+  header {
+    flex-grow: 1;
+    align-self: flex-start;
+    margin: 7em 0em 0em 3em;
+    width: 50%;
+  }
+}

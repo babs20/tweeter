@@ -67,3 +67,14 @@ main {
 button.hidden {
   display: none;
 }
+
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    margin-top: 100px;
+    flex-grow: 2;
+  }
+}

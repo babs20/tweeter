@@ -107,3 +107,9 @@
 .tweets article:hover img {
   opacity: 1;
 }
+
+@media (min-width: 1024px) {
+  .tweets {
+    /* margin-top: 100px; */
+  }
+}
