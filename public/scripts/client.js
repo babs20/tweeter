@@ -56,7 +56,7 @@ $(document).ready(function () {
 
   $(function () {
     const writeNewTweet = $('.tweet-button');
-    writeNewTweet.on('click', function (event) {
+    writeNewTweet.on('click', function () {
       const $tweetForm = $(this).parent().siblings('main').find('.new-tweet');
       const $tweetTextArea = $(this).parent().siblings('main').find('#tweet-text');
       if ($tweetForm.hasClass('hidden')) {

@@ -60,5 +60,10 @@ main {
 }
 
 .to-top:hover {
+  cursor: pointer;
   background-color: #ba0000;
+}
+
+button.hidden {
+  display: none;
 }
