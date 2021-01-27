@@ -18,5 +18,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Photos
 
-![Main Page](Dragster.jpg)
-![Small Page](Dragster.jpg)
+![Main Page](https://github.com/babs20/tweeter/blob/master/docs/main-page.png)
+![Small Page](https://github.com/babs20/tweeter/blob/master/docs/small-page.png)
