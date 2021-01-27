@@ -48,9 +48,14 @@
   min-width: 0;
 }
 
-.new-tweet button:hover {
-  background-color: base.$tweeter-blue-hover;
-  cursor: pointer;
+.new-tweet {
+  button:hover {
+    background-color: base.$tweeter-blue-hover;
+    cursor: pointer;
+  }
+  button:focus {
+    outline: none;
+  }
 }
 
 .new-tweet output {

@@ -50,6 +50,9 @@
   background-color: #677fcf;
   cursor: pointer;
 }
+.new-tweet button:focus {
+  outline: none;
+}
 
 .new-tweet output {
   color: #545149;
