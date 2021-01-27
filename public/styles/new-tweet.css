@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin: 1.75em 0 0.75em 0;
 }
 
 .new-tweet form {
@@ -45,6 +46,11 @@
   min-width: 0;
 }
 
+.new-tweet button:hover {
+  background-color: #697dc2;
+  cursor: pointer;
+}
+
 .new-tweet output {
   color: #545149;
   font-family: 'Bungee', sans-serif;
@@ -64,6 +70,10 @@
   text-align: center;
 }
 
-.new-tweet .error-hidden {
+.new-tweet.hidden {
+  display: none;
+}
+
+.hidden {
   display: none;
 }

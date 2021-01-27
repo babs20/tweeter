@@ -1,5 +1,6 @@
 'use strict';
 
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
 
@@ -54,6 +55,20 @@ $(document).ready(function () {
   loadTweets();
 
   $(function () {
+    const writeNewTweet = $('.tweet-button');
+    writeNewTweet.on('click', function (event) {
+      const $tweetForm = $(this).parent().siblings('main').find('.new-tweet');
+      const $tweetTextArea = $(this).parent().siblings('main').find('#tweet-text');
+      if ($tweetForm.hasClass('hidden')) {
+        $tweetForm.slideDown().toggleClass('hidden');
+        $tweetTextArea.focus();
+      } else {
+        $tweetForm.slideUp().toggleClass('hidden');
+      }
+    });
+  });
+
+  $(function () {
     const $form = $('#load-tweets');
     $form.on('submit', function (event) {
       event.preventDefault();
@@ -66,7 +81,6 @@ $(document).ready(function () {
 
       switch (true) { // MAKE OWN FUNCTION
         case tweetLength === 0:
-          console.log('yes');
           errorMsg.text('Can not post an empty tweet.');
           errorMsg
             .addClass('error-shown')

@@ -38,8 +38,11 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <span>tweeter</span>
-    <span class="tweet-button"> <b>Write</b> a new tweet</span>
+    <span class="brand-name">tweeter</span>
+    <div class="tweet-button">
+      <span class="tweet-button"> <b>Write</b> a new tweet</span>
+      <img src="/images/fast-forward-double-right-arrows-symbol-copy.png" alt="">
+    </div>
   </nav>
 
   <header>
@@ -53,8 +56,7 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
-
+    <section class="new-tweet hidden">
       <form action="/tweets" method="POST" id="load-tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" placeholder="Compose Tweet"></textarea>
@@ -63,11 +65,14 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-      <label class="error-hidden">
+      <label class="error-shown hidden">
       </label>
     </section>
     <section class="tweets" id="tweets-container">
     </section>
+    <button class="to-top">
+      <img src="/images/fast-forward-double-right-arrows-symbol.png" alt="">
+    </button>
   </main>
 </body>
 
