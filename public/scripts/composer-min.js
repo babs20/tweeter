@@ -1,0 +1,1 @@
+"use strict";$(document).ready((function(){const o=$(".jump-to-top");$(window).on("scroll",(function(){o.toggleClass("hidden",$(window).scrollTop()<500)})),$(o).on("click",(function(){window.scrollTo(0,0);const o=$(".new-tweet"),n=$("#tweet-text");o.slideDown().toggleClass("hidden"),n.focus()}))}));

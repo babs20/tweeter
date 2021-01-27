@@ -1,9 +1,13 @@
 'use strict';
 
+/* eslint-disable default-case */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
+// i should just look up the rules for these and add them
+// to the eslintrc but not too important right now.
 
+// ESCAPE FUNCTION
 $(document).ready(function () {
   const escape = function (str) {
     let div = document.createElement('div');
@@ -36,28 +40,29 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  const renderTweets = function (arrayOfTweets) {
+  const $renderTweets = function (arrayOfTweets) {
     for (const tweetData of arrayOfTweets) {
       const $tweet = createTweetElement(tweetData);
       $('#tweets-container').prepend($tweet);
     }
   };
 
-  const loadTweets = function (isNewTweetSubmission) {
-    $.ajax('/tweets', {
-      success: (data) => {
+  const $loadTweets = function (isNewTweetSubmission) {
+    $.ajax('/tweets')
+      .done((data) => {
         const dataToAdd = isNewTweetSubmission ? data.slice(data.length - 1) : data;
-        renderTweets(dataToAdd);
-      }
-    });
+        $renderTweets(dataToAdd);
+      })
+      .fail(() => console.log('Tweets are not loading right now. Try again later!'));
   };
 
-  loadTweets();
+  $loadTweets(); // initialize on page load
 
-  const writeNewTweet = $('.tweet-button');
-  writeNewTweet.on('click', function () {
+  const $toggleTweetBoxButton = $('.tweet-button');
+  $toggleTweetBoxButton.on('click', function () {
     const $tweetForm = $(this).parent().siblings('main').find('.new-tweet');
     const $tweetTextArea = $(this).parent().siblings('main').find('#tweet-text');
+
     if ($tweetForm.hasClass('hidden')) {
       $tweetForm.slideDown().toggleClass('hidden');
       $tweetTextArea.focus();
@@ -66,41 +71,40 @@ $(document).ready(function () {
     }
   });
 
-  $(function () {
-    const $form = $('#load-tweets');
-    $form.on('submit', function (event) {
-      event.preventDefault();
+  const handleErrorOnSubmit = function (formElement) {
+    const $errorMsgElement = $(formElement).parent().children('.error-box');
+    const $tweetLength = $(formElement).children('#tweet-text').val().length;
 
-      const errorMsg = $(this).parent().children('label');
-      const tweetLength = $(this)
-        .children('#tweet-text')
-        .val()
-        .length;
+    switch (true) {
+      case $tweetLength === 0:
+        $errorMsgElement
+          .text('Can not post an empty tweet.')
+          .slideDown();
+        return true;
+      case $tweetLength > 140:
+        $errorMsgElement
+          .text('Your post is too long. Please shorten it.')
+          .slideDown();
+        return true;
+      default:
+        $errorMsgElement.slideUp();
+        return false;
+    }
+  };
 
-      switch (true) { // MAKE OWN FUNCTION
-        case tweetLength === 0:
-          errorMsg.text('Can not post an empty tweet.');
-          errorMsg
-            .addClass('error-shown')
-            .slideDown()
-            .removeClass('error-hidden');
-          return;
-        case tweetLength > 140:
-          errorMsg.text('Your post is too long. Please shorten it.');
-          errorMsg
-            .addClass('error-shown')
-            .slideDown()
-            .removeClass('error-hidden');
-          return;
-        default:
-      }
+  // SUBMIT TWEET FORM
+  const $tweetForm = $('#load-tweets');
+  $tweetForm.on('submit', function (event) {
+    event.preventDefault();
+    if (handleErrorOnSubmit(this)) return;
 
-      errorMsg.slideUp();
+    const $formText = $(this).serialize();
+    $.ajax('/tweets', { method: 'POST', data: $formText })
+      .done(() => {
+        $loadTweets(true);
+      })
+      .fail(() => console.log('Tweets are not sending right now. Try again later!'));
 
-      const formText = $(this).serialize();
-      $.ajax('/tweets', { method: 'POST', data: formText, success: () => loadTweets(true) });
-
-      $(this).children('#tweet-text').val('');
-    });
+    $(this).children('#tweet-text').val('');
   });
 });

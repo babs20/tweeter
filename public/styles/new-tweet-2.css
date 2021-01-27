@@ -59,12 +59,13 @@
   font-family: "Bungee", sans-serif;
 }
 
-.counter.negative-num {
+.counter.change-text-red {
   color: red;
   font-family: "Bungee", sans-serif;
 }
 
-.new-tweet .error-shown {
+.new-tweet .error-box {
+  display: none;
   justify-self: center;
   margin: 1.5em 0em 0em 0em;
   padding: 0.75em;
@@ -76,9 +77,5 @@
 }
 
 .new-tweet.hidden {
-  display: none;
-}
-
-.hidden {
   display: none;
 }

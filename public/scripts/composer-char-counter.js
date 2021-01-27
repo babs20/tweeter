@@ -2,12 +2,10 @@
 
 $(document).ready(function () {
   $('#tweet-text').on('input', function () {
-    // parents > find class
     const lengthOfTweet = $(this).val().length;
-    const counter = $(this).siblings('div').children('output');
+    const counter = $(this).parent().find('.counter');
 
-    // toggle
-    lengthOfTweet > 140 ? counter.addClass('negative-num') : counter.removeClass('negative-num');
+    counter.toggleClass('change-text-red', lengthOfTweet > 140);
 
     counter.text(140 - lengthOfTweet);
   });
