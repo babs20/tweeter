@@ -106,5 +106,6 @@ $(document).ready(function () {
       .fail(() => console.log('Tweets are not sending right now. Try again later!'));
 
     $(this).children('#tweet-text').val('');
+    $(this).parent().find('.counter').text('140');
   });
 });
