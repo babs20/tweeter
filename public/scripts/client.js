@@ -1,12 +1,5 @@
 'use strict';
 
-/* eslint-disable default-case */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-console */
-// i should just look up the rules for these and add them
-// to the eslintrc but not too important right now.
-
 // ESCAPE FUNCTION
 $(document).ready(function () {
   const escape = function (str) {

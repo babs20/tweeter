@@ -23,6 +23,8 @@ Additional stretch exercises include:
 - Node 5.10.x or above
 - body-parser 1.15.2 or above
 - chance 1.0.2 or above
+- chance 1.0.2 or above
+- md5 2.1.0 or above
 
 ## Photos
 
