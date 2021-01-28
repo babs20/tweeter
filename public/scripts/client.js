@@ -33,23 +33,23 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  const $renderTweets = function (arrayOfTweets) {
+  const renderTweets = function (arrayOfTweets) {
     for (const tweetData of arrayOfTweets) {
       const $tweet = createTweetElement(tweetData);
       $('#tweets-container').prepend($tweet);
     }
   };
 
-  const $loadTweets = function (isNewTweetSubmission) {
+  const loadTweets = function (isNewTweetSubmission) {
     $.ajax('/tweets')
       .done((data) => {
         const dataToAdd = isNewTweetSubmission ? data.slice(data.length - 1) : data;
-        $renderTweets(dataToAdd);
+        renderTweets(dataToAdd);
       })
       .fail(() => console.log('Tweets are not loading right now. Try again later!'));
   };
 
-  $loadTweets(); // initialize on page load
+  loadTweets(); // initialize on page load
 
   const $toggleTweetBoxButton = $('.tweet-button');
   $toggleTweetBoxButton.on('click', function () {
@@ -94,7 +94,7 @@ $(document).ready(function () {
     const $formText = $(this).serialize();
     $.ajax('/tweets', { method: 'POST', data: $formText })
       .done(() => {
-        $loadTweets(true);
+        loadTweets(true);
       })
       .fail(() => console.log('Tweets are not sending right now. Try again later!'));
 
