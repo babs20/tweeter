@@ -1,1 +1,0 @@
-"use strict";$(document).ready((function(){$("#tweet-text").on("input",(function(){const t=$(this).val().length,e=$(this).parent().find(".counter");e.toggleClass("change-text-red",t>140),e.text(140-t)}))}));
