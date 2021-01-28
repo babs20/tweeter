@@ -8,11 +8,10 @@ $(document).ready(function () {
   });
 
   $(buttonToTop).on('click', function () {
-    window.scrollTo(0, 0);
-
     const $tweetForm = $('.new-tweet');
     const $tweetTextArea = $('#tweet-text');
     $tweetForm.slideDown().toggleClass('hidden');
     $tweetTextArea.focus();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
